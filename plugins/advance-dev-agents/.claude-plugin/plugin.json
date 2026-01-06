@@ -1,0 +1,18 @@
+{
+  "name": "advanced-agentic-dev-suit",
+  "version": "1.0.0",
+  "description": "Comprehensive suite for advanced agentic development, featuring specialized commands, subagents, and skills.",
+  "author": {
+    "name": "Bryan Duarte",
+    "linkedin": "https://www.linkedin.com/in/bryan-duarte/"
+  },
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@context7/mcp-server"
+      ]
+    }
+  }
+}

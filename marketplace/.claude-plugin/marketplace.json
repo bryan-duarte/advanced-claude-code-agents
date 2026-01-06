@@ -1,0 +1,15 @@
+{
+  "name": "advance-dev-agents-marketplace",
+  "owner": {
+    "name": "Bryan Duarte",
+    "linkedin": "https://www.linkedin.com/in/bryan-duarte/"
+  },
+  "plugins": [
+    {
+      "name": "advance-dev-agents",
+      "source": "./plugins/advance-dev-agents",
+      "description": "Advance Dev Agents - A comprehensive toolset for agentic development",
+      "version": "1.0.0"
+    }
+  ]
+}
