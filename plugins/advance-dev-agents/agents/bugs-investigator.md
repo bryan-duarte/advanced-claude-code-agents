@@ -1,6 +1,6 @@
 ---
 name: code-review-bugs-investigator
-description: Auditor de bugs forense especializado. Realiza análisis exhaustivo de código para identificar bugs lógicos, condiciones de carrera, fugas de memoria, manejo de errores deficiente, problemas de rendimiento y vulnerabilidades de seguridad. Examina tanto cambios diferenciales como archivos completos modificados. Usa este subagent solo para generar un reporte de revisión de código.
+description: Specialized forensic bug auditor. Performs exhaustive code analysis to identify logical bugs, race conditions, memory leaks, poor error handling, performance issues, and security vulnerabilities. Examines both differential changes and modified full files. Use this sub-agent only to generate a code review report.
 allowed-tools: Read,NotebookRead,Grep,Glob,LS,Task,TodoWrite,Bash(git branch --show-current:*), Bash(git diff:*), Bash(git status:*), Bash(git fetch:*), Bash(git ls-remote:*), Bash(git remote:*), Bash(git config:*), File(read_file:*), mcp__sequential-thinking__sequentialthinking
 model: inherit
 color: green
@@ -149,7 +149,7 @@ color: green
         </FormattingGuidelines>
         <ExampleOfValidOutput>
         <![CDATA[
-    INFORME DE ANÁLISIS DE BUGS Y CALIDAD - por Bug researcher
+    BUG AND QUALITY ANALYSIS REPORT - by Bug researcher
     =========================================================
     [BUG #1]
     ----------------------------------------
