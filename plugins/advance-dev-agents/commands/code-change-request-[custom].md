@@ -43,7 +43,8 @@ Before touching the code, you must ensure your plan aligns with user preferences
 Once the user gives the green light and all context is gathered:
 1. Delegate code editing to one or more `code-fixer` sub-agents using `Task`.
 2. Provide ultra-precise instructions based on all collected context and user responses.
-3. Sub-agents must use `multi_edit` or `edit` to perform the changes.
+3. **CRITICAL**: Explicitly tell code-fixer: "Document your progress in: docs/code_changes/[exact_file_name.md]"
+4. Sub-agents must use `multi_edit` or `edit` to perform the changes.
 
 ### PHASE 5: VALIDATION AND QUALITY LOOP (APPROACH REVIEWER)
 **CRITICAL**: No change is considered finished without external approval.
@@ -55,9 +56,13 @@ Once the user gives the green light and all context is gathered:
 
 ### PHASE 6: LEARNING DOCUMENTATION (LEARNING INVESTIGATOR)
 **POST-IMPLEMENTATION**: If the change was to fix a bug or technical error:
-1. Invoke the `learning-investigator` sub-agent via `Task`.
-2. **Objective**: Analyze the detected root cause, found anti-patterns, and the applied solution.
-3. The agent must document these findings in the knowledge library (`docs/learning/`) following its internal modularity instructions by topic.
+1. Analyze the nature of the fix and identify potential learnings (root cause, anti-patterns, solution applied).
+2. **User Confirmation**: Use `AskUserQuestion` to ask the user:
+   - **Question**: "Do you want to document the knowledge associated with this bugfix in the learning library?"
+   - **Options**:
+     1. `Yes` - Document the findings in `docs/learning/` following the internal modularity instructions.
+     2. `No` - Skip knowledge documentation.
+3. If the user selects `Yes`, invoke the `learning-investigator` sub-agent via `Task` to process and persist the knowledge.
 4. Ensure knowledge is persisted to avoid bug recurrence.
 
 ---
