@@ -301,6 +301,25 @@ Orchestrators manage workflows, coordinate parallel execution, consolidate findi
 
 > This skill ensures consistency across all agents and maintains codebase health.
 
+---
+
+## 📦 Installation
+
+```bash
+# 1. Add the marketplace
+/plugin marketplace add https://github.com/BryanCaceres/advanced-claude-code-agents
+
+# 2. Install the plugin
+/plugin install advance-dev-agents@advance-dev-agents
+```
+
+---
+
+## 🔌 Dependencies
+
+This plugin integrates with **Context7 MCP server** for real-time documentation retrieval.
+
+---
 
 ## The Fundamental Difference
 

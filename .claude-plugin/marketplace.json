@@ -1,12 +1,13 @@
 {
-  "name": "advance-dev-agents-plugins",
+  "name": "advance-dev-agents",
   "owner": {
-    "name": "Bryan Duarte"
+    "name": "Bryan Duarte",
+    "github": "BryanCaceres"
   },
   "plugins": [
     {
       "name": "advance-dev-agents",
-      "source": "./plugins/advance-dev-agents",
+      "source": "plugins/advance-dev-agents",
       "description": "Advance Dev Agents - A toolset for agentic development"
     }
   ]
