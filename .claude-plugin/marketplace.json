@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "advance-dev-agents",
-      "source": "plugins/advance-dev-agents",
+      "source": "./plugins/advance-dev-agents",
       "description": "Advance Dev Agents - A toolset for agentic development"
     }
   ]
