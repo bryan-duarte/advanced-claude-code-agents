@@ -1,6 +1,38 @@
+    :::     :::::::::  :::     :::     :::     ::::    :::  ::::::::  :::::::::: :::::::::  
+  :+: :+:   :+:    :+: :+:     :+:   :+: :+:   :+:+:   :+: :+:    :+: :+:        :+:    :+: 
+ +:+   +:+  +:+    +:+ +:+     +:+  +:+   +:+  :+:+:+  +:+ +:+        +:+        +:+    +:+ 
++#++:++#++: +#+    +:+ +#+     +:+ +#++:++#++: +#+ +:+ +#+ +#+        +#++:++#   +#+    +:+ 
++#+     +#+ +#+    +#+  +#+   +#+  +#+     +#+ +#+  +#+#+# +#+        +#+        +#+    +#+ 
+#+#     #+# #+#    #+#   #+#+#+#   #+#     #+# #+#   #+#+# #+#    #+# #+#        #+#    #+# 
+###     ### #########      ###     ###     ### ###    ####  ########  ########## #########  
+    :::      ::::::::  :::::::::: ::::    ::: :::::::::::  ::::::::                         
+  :+: :+:   :+:    :+: :+:        :+:+:   :+:     :+:     :+:    :+:                        
+ +:+   +:+  +:+        +:+        :+:+:+  +:+     +:+     +:+                               
++#++:++#++: :#:        +#++:++#   +#+ +:+ +#+     +#+     +#++:++#++                        
++#+     +#+ +#+   +#+# +#+        +#+  +#+#+#     +#+            +#+                        
+#+#     #+# #+#    #+# #+#        #+#   #+#+#     #+#     #+#    #+#                        
+###     ###  ########  ########## ###    ####     ###      ########                         
+
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/89e48112-6509-4645-bd2c-73a22dc094d2" />
 
+---
+
+## 📦 Installation
+
+```bash
+# 1. Add the marketplace
+/plugin marketplace add https://github.com/YOUR_USERNAME/YOUR_REPO
+
+# 2. Install the plugin
+/plugin install advance-dev-agents@advance-dev-agents-marketplace
+```
+
+---
+
+## 🔌 Dependencies
+
+This plugin integrates with **Context7 MCP server** for real-time documentation retrieval.
 
 ---
 
@@ -365,25 +397,6 @@ Orchestrators manage workflows, coordinate parallel execution, consolidate findi
 
 > This skill ensures consistency across all agents and maintains codebase health.
 
----
-
-## 📦 Installation
-
-```bash
-# 1. Add the marketplace
-/plugin marketplace add https://github.com/YOUR_USERNAME/YOUR_REPO
-
-# 2. Install the plugin
-/plugin install advance-dev-agents@advance-dev-agents-marketplace
-```
-
----
-
-## 🔌 Dependencies
-
-This plugin integrates with **Context7 MCP server** for real-time documentation retrieval.
-
----
 
 ## The Fundamental Difference
 
