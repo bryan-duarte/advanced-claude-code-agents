@@ -4,8 +4,12 @@
   "description": "Comprehensive suite for advanced agentic development, featuring specialized commands, subagents, and skills.",
   "author": {
     "name": "Bryan Duarte",
-    "linkedin": "https://www.linkedin.com/in/bryan-duarte/"
+    "url": "https://github.com/bryanduarte"
   },
+  "homepage": "https://github.com/BryanCaceres/advanced-claude-code-agents",
+  "repository": "https://github.com/BryanCaceres/advanced-claude-code-agents",
+  "license": "MIT",
+  "keywords": ["code-reviews", "agents", "claude", "advanced"],
   "mcpServers": {
     "context7": {
       "command": "npx",
