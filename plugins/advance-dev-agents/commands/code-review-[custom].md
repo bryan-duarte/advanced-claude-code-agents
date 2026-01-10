@@ -1,5 +1,5 @@
 ---
-allowed-tools: Read,NotebookRead,Grep,Glob,LS,Task,TodoWrite,AskUserQuestion,Bash(git branch --show-current:*),Bash(mkdir:*), Bash(git diff:*), Bash(git status:*), Bash(git fetch:*), Bash(git ls-remote:*), Bash(git remote:*), Bash(git config:*), Bash(git -C *), Bash(git log:*), Bash(git show:*), Bash(git rev-parse:*), Bash(git ls-files:*), Bash(git branch -a:*), Bash(git tag:*), File(read_file:*), mcp__sequential-thinking__sequentialthinking, mcp__context7__resolve-library-id, mcp__context7__query-docs
+allowed-tools: Read,NotebookRead,Grep,Glob,LS,Task,TodoWrite,AskUserQuestion,Bash(git branch --show-current:*),Bash(mkdir:*), Bash(git diff:*), Bash(git status:*), Bash(git fetch:*), Bash(git ls-remote:*), Bash(git remote:*), Bash(git config:*), Bash(git -C *), Bash(git log:*), Bash(git show:*), Bash(git rev-parse:*), Bash(git ls-files:*), Bash(git branch -a:*), Bash(git tag:*), File(read_file:*), mcp__context7__resolve-library-id, mcp__context7__query-docs
 description: Creates a comprehensive code analysis on changes, branch, or other custom scope.
 ---
 
@@ -10,15 +10,17 @@ The user will define the scope (staging, branch vs. origin, or custom). Your mis
 
 **IMPORTANT**: Do not assume the scope. Use the `AskUserQuestion` tool at the beginning for the user to choose:
 - **Options**:
-  1. `Staging vs Last Commit (git diff --staged)`
-  2. `Current Branch vs Origin (git diff origin/main...HEAD)`
-  3. `Custom Instructions` (To define a specific feature, module or specific files)
+  1. `Staging vs Last Commit (git diff --staged)` - Requires git repository
+  2. `Current Branch vs Origin (git diff origin/main...HEAD)` - Requires git repository with remote
+  3. `Custom Instructions` (To define a specific feature, module or specific files) - Does NOT require git
 
-- The Current branch is: !`git branch --show-current`
-- The main branch in the remote repository is: !`git ls-remote --heads origin main`
+**Git availability check**: Only validate git repository existence if the user selects options 1 or 2. If user selects option 3 (Custom Instructions), git is optional and the review should proceed regardless of git availability.
 
-- Current git status: !`git status`
-- Recent commits: !`git log --oneline -10`
+- The Current branch is: !`git rev-parse --git-dir > /dev/null 2>&1 && git branch --show-current || echo "No git repository found"`
+- The main branch in the remote repository is: !`git rev-parse --git-dir > /dev/null 2>&1 && git ls-remote --heads origin main 2>/dev/null || echo "No remote repository configured"`
+
+- Current git status: !`git rev-parse --git-dir > /dev/null 2>&1 && git status || echo "No git repository found"`
+- Recent commits: !`git rev-parse --git-dir > /dev/null 2>&1 && git log --oneline -10 || echo "No git repository found"`
 
 If you encounter any ambiguity in the user's request or during the process, assume nothing; use `AskUserQuestion` to clarify.
 
@@ -47,10 +49,13 @@ Use `AskUserQuestion` to define the initial scope and then search for additional
    - Check root files: `package.json`, `requirements.txt`, `go.mod`, `pom.xml`, `README.md`.
    - Identify: Primary language, frameworks (Next.js, FastAPI, etc.), and critical libraries.
    - Generate a context summary to pass to the sub-agents.
+   - **Note**: This step works independently of git availability. Always execute regardless of git status.
 
-0.5. **Scope Clarification (Optional)**: 
+0.5. **Scope Clarification (Optional)**:
    - If after the discovery phase and the initial scope analysis (diff) you find ambiguities or lack of critical information to perform a quality review, use `AskUserQuestion` to request additional details from the user.
    - **Rule**: Do not proceed with an incomplete review if the scope is not clear.
+   - **Git-dependent scenarios**: If user selected options 1 or 2 (Staging/Branch comparisons) and no git repository exists, inform the user that the selected option requires a git repository and offer to switch to "Custom Instructions" mode.
+   - **Git-independent scenarios**: If user selected option 3 or the scope is file/feature-based, proceed without requiring git.
 
 1. **Execution of Selected Sub-agents**: Launch **only** the sub-agents that correspond to the user's selection in the previous step, passing them the discovered context. If the user chose "All," launch them all:
    - `bugs-investigator` (Source: Bug researcher)

@@ -1,8 +1,8 @@
 ---
 name: code-review-architecture-investigator
 description: Senior Software Architect specialized in structural integrity and consistency. Analyzes whether changes follow the project's existing architectural patterns (Scope Rule, Screaming Architecture, Cohesion, and Coupling). Ensures that code does not introduce "architectural drift" and that the structure clearly communicates its intent.
-allowed-tools: Read,NotebookRead,Grep,Glob,LS,Task,TodoWrite,Bash(git branch --show-current:*), Bash(git diff:*), Bash(git status:*), File(read_file:*), mcp__sequential-thinking__sequentialthinking
-model: inherit
+allowed-tools: Read,NotebookRead,Grep,Glob,LS,Task,TodoWrite,Bash(git branch --show-current:*), Bash(git diff:*), Bash(git status:*), File(read_file:*)
+model: sonnet
 color: green
 ---
 

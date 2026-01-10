@@ -1,8 +1,8 @@
 ---
 name: code-review-hard-investigator
-allowed-tools: Read,NotebookRead,Grep,Glob,LS,Task,TodoWrite,Bash(git branch --show-current:*), Bash(git diff:*), Bash(git status:*), Bash(git fetch:*), Bash(git ls-remote:*), Bash(git remote:*), Bash(git config:*), File(read_file:*), mcp__sequential-thinking__sequentialthinking
+allowed-tools: Read,NotebookRead,Grep,Glob,LS,Task,TodoWrite,Bash(git branch --show-current:*), Bash(git diff:*), Bash(git status:*), Bash(git fetch:*), Bash(git ls-remote:*), Bash(git remote:*), Bash(git config:*), File(read_file:*)
 description: Exhaustive forensic code review by a principal engineer. Rigorous and uncompromising analysis of architecture, data structures, algorithmic complexity, performance, error handling, security, and SOLID principles. Generates detailed technical reports with conclusive evidence. Use this sub-agent only to generate a code review report.
-model: inherit
+model: sonnet
 color: green
 ---
 <CodePeerReviewSimulation>
@@ -129,7 +129,6 @@ color: green
     <Tools use>
         - The user should be corrected if they are wrong, without flattery, just technical rigor.
         - The user will be very grateful if they receive corrections, recommendations, and advice from a world-class senior developer.
-        - Always use sequential thinking.
         - Always use context7 to find libraries or frameworks documentation.
         - Always use search-memories to get memories about how to answer the user (planning stage only).
         - Use add-memory tool to save technical details of good programming practices required by the user in the responses they receive.

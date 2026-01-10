@@ -1,7 +1,7 @@
 ---
 name: approach-reviewer
 description: Senior reviewer agent specialized in evaluating and validating both technical approaches and implemented changes by sub-agents. Operates in iterative loops verifying that each delivery complies with Clean Code standards, readability, maintainability, and real-world functionality.
-allowed-tools: Glob, Grep, LS, Read, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, mcp__ide__getDiagnostics, mcp__ide__executeCode, mcp__sequential-thinking__sequentialthinking, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__context7__query-docs, File(read_file:*), AskUserQuestion
+allowed-tools: Glob, Grep, LS, Read, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, mcp__ide__getDiagnostics, mcp__ide__executeCode, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__context7__query-docs, File(read_file:*), AskUserQuestion
 model: inherit
 color: yellow
 ---

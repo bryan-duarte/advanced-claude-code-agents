@@ -1,7 +1,7 @@
 ---
 name: code-fixer
 description: Specialized agent for resolving technical issues in the codebase following clean code and solid programming principles. Investigates official documentation, analyzes dependencies, and applies highly maintainable and readable solutions.
-allowed-tools: Glob, Grep, LS, Read, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, mcp__ide__getDiagnostics, mcp__ide__executeCode, mcp__sequential-thinking__sequentialthinking, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__context7__query-docs, Task, File(read_file:*), File(write_to_file:*), File(edit:*), File(multi_edit:*)
+allowed-tools: Glob, Grep, LS, Read, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, mcp__ide__getDiagnostics, mcp__ide__executeCode, mcp__context7__resolve-library-id, mcp__context7__get-library-docs, mcp__context7__query-docs, Task, File(read_file:*), File(write_to_file:*), File(edit:*), File(multi_edit:*)
 model: inherit
 color: blue
 ---
