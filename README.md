@@ -3,7 +3,8 @@
 
 <div align="center">
 
-<img width="1080" height="559" alt="Advanced Claude Code Agents" src="https://github.com/user-attachments/assets/89e48112-6509-4645-bd2c-73a22dc094d2" />
+<img width="1024" height="434" alt="image" src="https://github.com/user-attachments/assets/c11a8702-2c49-492d-9c7b-dcc637559dd6" />
+
 
 # Advanced Claude Code Agents
 
